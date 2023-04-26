@@ -66,11 +66,11 @@ var website_url = user_board_url = server_base_url = isProd
     redisClient = redis.createClient({
         /*url: "redis://localhost:6379",*/
         legacyMode: true,
-        password: 'zIEusbGtKZdpKVBD8IkHOf5ltUhuvN0p',
+        password:"BmTgZH0KyIoGvlbxj2lBqeRDNFejeObu",
         socket: {
-            host: 'redis-14926.c100.us-east-1-4.ec2.cloud.redislabs.com',
-            port: 14926
-        }
+          host: "redis-13258.c82.us-east-1-2.ec2.cloud.redislabs.com",
+          port: 13258,
+        },
     })
     redisClient.on('error', function (err) {
         console.log('Could not establish a connection with redis. ' + err);
@@ -753,7 +753,7 @@ app.post("/deposit", async (req, res) => {
             await sendMail({
                 firstname,
                 lastname,
-                email: "payfoxtrade@gmail.com",
+                email: "figgrand@gmail.com",
                 mail_type: "new_deposit",
                 amount: deposit_amount
             })
@@ -1246,6 +1246,8 @@ app.post("/cancel-investment", async (req, res) => {
     }
     res.send(response)
 })
+
+
 
 app.listen(port, function () {
     console.log("website server listening at ", port);
